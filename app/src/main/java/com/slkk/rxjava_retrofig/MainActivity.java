@@ -8,14 +8,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
-import com.slkk.rxjava_retrofig.elementary_1.ElementaryFragment;
-import com.slkk.rxjava_retrofig.map_2.MapFragment;
-import com.slkk.rxjava_retrofig.module.cache_6.CacheFragment;
-import com.slkk.rxjava_retrofig.token_4.TokenFragment;
-import com.slkk.rxjava_retrofig.token_advanced_5.TokenAdvancedFragment;
-import com.slkk.rxjava_retrofig.zip_3.ZipFragment;
+import com.slkk.rxjava_retrofig.modules.elementary_1.ElementaryFragment;
+import com.slkk.rxjava_retrofig.modules.map_2.MapFragment;
+import com.slkk.rxjava_retrofig.modules.cache_6.CacheFragment;
+import com.slkk.rxjava_retrofig.modules.token_4.TokenFragment;
+import com.slkk.rxjava_retrofig.modules.token_advanced_5.TokenAdvancedFragment;
+import com.slkk.rxjava_retrofig.modules.zip_3.ZipFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,4 +1,4 @@
-package com.slkk.rxjava_retrofig.elementary_1;
+package com.slkk.rxjava_retrofig.modules.cache_6;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,11 +13,12 @@ import com.slkk.rxjava_retrofig.R;
  * Created by slkk on 2017/11/10.
  */
 
-public class ElementaryFragment extends BaseFragment {
+public class CacheFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_elementary, container, false);
+        View view = inflater.inflate(R.layout.fragment_cache, container, false);
         return view;
+
     }
 }

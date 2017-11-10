@@ -1,4 +1,4 @@
-package com.slkk.rxjava_retrofig.map_2;
+package com.slkk.rxjava_retrofig.modules.map_2;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

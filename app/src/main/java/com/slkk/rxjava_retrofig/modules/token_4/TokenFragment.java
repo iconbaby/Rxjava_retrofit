@@ -1,4 +1,4 @@
-package com.slkk.rxjava_retrofig.token_advanced_5;
+package com.slkk.rxjava_retrofig.modules.token_4;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,12 +13,11 @@ import com.slkk.rxjava_retrofig.R;
  * Created by slkk on 2017/11/10.
  */
 
-public class TokenAdvancedFragment extends BaseFragment {
+public class TokenFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_token_advanced, container, false);
+        View view = inflater.inflate(R.layout.fragment_token, container, false);
         return view;
-
     }
 }
