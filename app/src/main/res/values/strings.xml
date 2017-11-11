@@ -6,4 +6,8 @@
     <string name="str_token">TOKEN(FLATMAP)</string>
     <string name="str_token_super">TOKEN_高级(RETRYWHEN)</string>
     <string name="str_cache">缓存(BEHAVIORSUBJECT)</string>
+    <string name="str_keai">可爱</string>
+    <string name="str_110">110</string>
+    <string name="str_zaixia">在下</string>
+    <string name="str_zhuangbi">装逼</string>
 </resources>
