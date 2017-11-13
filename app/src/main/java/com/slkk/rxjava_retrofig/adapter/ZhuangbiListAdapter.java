@@ -10,8 +10,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.slkk.rxjava_retrofig.R;
 import com.slkk.rxjava_retrofig.modle.Stories;
-import com.slkk.rxjava_retrofig.modle.ZhihuRootBean;
-import com.slkk.rxjava_retrofig.modle.ZhuangbiImage;
 
 import java.util.List;
 
