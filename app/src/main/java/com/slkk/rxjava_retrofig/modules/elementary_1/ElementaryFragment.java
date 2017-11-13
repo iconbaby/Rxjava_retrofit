@@ -16,14 +16,13 @@ import android.widget.RadioGroup;
 import com.slkk.rxjava_retrofig.BaseFragment;
 import com.slkk.rxjava_retrofig.R;
 import com.slkk.rxjava_retrofig.adapter.ZhuangbiListAdapter;
-import com.slkk.rxjava_retrofig.modle.ZhuangbiImage;
+import com.slkk.rxjava_retrofig.modle.ZhihuRootBean;
 import com.slkk.rxjava_retrofig.network.Network;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
@@ -75,16 +74,17 @@ public class ElementaryFragment extends BaseFragment implements RadioGroup.OnChe
     }
 
     private void loadImage(String key) {
-        Log.i(TAG, "loadImage: "+key);
+        Log.i(TAG, "loadImage: " + key);
         disposable = Network.getZhuangbi()
-                .search(key)
+                .search()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<List<ZhuangbiImage>>() {
+                .subscribe(new Consumer<ZhihuRootBean>() {
                     @Override
-                    public void accept(List<ZhuangbiImage> zhuangbiImages) throws Exception {
+                    public void accept(ZhihuRootBean zhihurootbean) throws Exception {
+                        Log.i(TAG, "accept: ");
                         swp.setRefreshing(false);
-                        adapter.setImage(zhuangbiImages);
+                        adapter.setImage(zhihurootbean.getStories());
                     }
                 }, new Consumer<Throwable>() {
                     @Override
@@ -93,13 +93,14 @@ public class ElementaryFragment extends BaseFragment implements RadioGroup.OnChe
                     }
                 })
         ;
-
+//        Network.testRetrofit();
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         unsubsribe();
         swp.setRefreshing(true);
+        adapter.setImage(null);
         switch (checkedId) {
             case R.id.rb_keai:
                 loadImage(rbKeai.getText().toString());

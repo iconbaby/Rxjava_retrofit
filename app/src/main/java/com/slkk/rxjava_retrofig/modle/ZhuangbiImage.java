@@ -5,6 +5,6 @@ package com.slkk.rxjava_retrofig.modle;
  */
 
 public class ZhuangbiImage {
-    public String description;
-    public String image_url;
+    public String title;
+    public String image;
 }

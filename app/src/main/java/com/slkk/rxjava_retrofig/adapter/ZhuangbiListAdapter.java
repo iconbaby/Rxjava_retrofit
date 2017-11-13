@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.slkk.rxjava_retrofig.R;
+import com.slkk.rxjava_retrofig.modle.Stories;
+import com.slkk.rxjava_retrofig.modle.ZhihuRootBean;
 import com.slkk.rxjava_retrofig.modle.ZhuangbiImage;
 
 import java.util.List;
@@ -22,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class ZhuangbiListAdapter extends RecyclerView.Adapter {
 
-    List<ZhuangbiImage> zhuangbiImages;
+    List<Stories> stories;
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -33,20 +35,19 @@ public class ZhuangbiListAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         DebounceViewHolder debounceHolder = (DebounceViewHolder) holder;
-        ZhuangbiImage zhuangbiImage = zhuangbiImages.get(position);
-        Glide.with(holder.itemView.getContext()).load(zhuangbiImage.image_url).into(debounceHolder.gvItemIv);
-        debounceHolder.gvItemTv.setText(zhuangbiImage.description);
+        Glide.with(holder.itemView.getContext()).load(stories.get(position).getImages().get(0)).into(debounceHolder.gvItemIv);
+        debounceHolder.gvItemTv.setText(stories.get(position).getTitle());
 
     }
 
-    public void setImage(List<ZhuangbiImage> list) {
-        this.zhuangbiImages = list;
+    public void setImage(List<Stories> list) {
+        this.stories = list;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return zhuangbiImages == null ? 0 : zhuangbiImages.size();
+        return stories == null ? 0 : stories.size();
     }
 
     class DebounceViewHolder extends RecyclerView.ViewHolder {
