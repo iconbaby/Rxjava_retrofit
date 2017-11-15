@@ -10,4 +10,6 @@
     <string name="str_110">110</string>
     <string name="str_zaixia">在下</string>
     <string name="str_zhuangbi">装逼</string>
+    <string name ="str_lastpage">上一页</string>
+    <string name ="str_nextpage">下一页</string>
 </resources>

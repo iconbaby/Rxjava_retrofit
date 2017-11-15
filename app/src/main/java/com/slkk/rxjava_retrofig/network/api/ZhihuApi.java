@@ -9,7 +9,7 @@ import retrofit2.http.GET;
  * Created by slkk on 2017/11/10.
  */
 
-public interface ZhuangbiAPI {
+public interface ZhihuApi {
 
     @GET("api/4/news/latest")
     Observable<ZhihuRootBean> search();

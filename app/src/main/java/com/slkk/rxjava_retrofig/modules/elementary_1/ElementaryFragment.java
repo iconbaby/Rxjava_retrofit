@@ -56,7 +56,6 @@ public class ElementaryFragment extends BaseFragment implements RadioGroup.OnChe
         View view = inflater.inflate(R.layout.fragment_elementary, container, false);
         ButterKnife.bind(this, view);
 
-
         elementRv.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         elementRv.setAdapter(adapter);
 
