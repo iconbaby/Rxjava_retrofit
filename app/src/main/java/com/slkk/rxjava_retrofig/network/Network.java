@@ -1,5 +1,6 @@
 package com.slkk.rxjava_retrofig.network;
 
+import com.slkk.rxjava_retrofig.network.api.GankApi;
 import com.slkk.rxjava_retrofig.network.api.ZhihuApi;
 
 import okhttp3.OkHttpClient;
@@ -21,6 +22,8 @@ public class Network {
     private Network instance;
     private static final String TAG = "Network";
 
+    private static GankApi gankApi;
+
     public static ZhihuApi getZhuangbi() {
         if (zhihuApi == null) {
             Retrofit retrofit = new Retrofit.Builder()
@@ -33,6 +36,19 @@ public class Network {
         }
 
         return zhihuApi;
+    }
+
+    public static GankApi getGankApi() {
+        if (gankApi == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .client(okHttpClient)
+                    .baseUrl("http://gank.io/")
+                    .addConverterFactory(gsonConverterFactory)
+                    .addCallAdapterFactory(rxJavaCallAdapterFactory)
+                    .build();
+            gankApi = retrofit.create(GankApi.class);
+        }
+        return gankApi;
     }
 
 //    public static void testRetrofit() {

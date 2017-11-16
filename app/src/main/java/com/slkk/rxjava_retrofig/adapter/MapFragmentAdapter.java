@@ -1,6 +1,7 @@
 package com.slkk.rxjava_retrofig.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ import java.util.List;
  */
 
 public class MapFragmentAdapter extends RecyclerView.Adapter {
-
+    private static final String TAG = "MapFragmentAdapter";
     List<GankItem> images;
 
     @Override
@@ -50,7 +51,8 @@ public class MapFragmentAdapter extends RecyclerView.Adapter {
         }
     }
 
-    private void setItem(List<GankItem> list) {
+    public void setItem(List<GankItem> list) {
+        Log.i(TAG, "setItem: "+list.size());
         this.images = list;
         notifyDataSetChanged();
     }
